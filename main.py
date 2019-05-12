@@ -4,23 +4,21 @@ import logging
 import logging.config as logging_cfg
 from pathlib import Path
 from configparser import ConfigParser
+from app import create_app
 
 
 def main():
     # General app configuration
 
-    app_name = 'Python_project_template'
-
     # set root directory for the app
-    root = Path('./') / os.getcwd() / app_name
-    print(root)
+    root = Path('.') / os.getcwd()
 
     # setup configuration file path using the APP_ENV environment variable
     cfg_path = root / 'config' / '{}.ini'.format(os.environ.get('APP_ENV'))
     cfg_parser = ConfigParser()
 
     # read .ini file for the appropriate app setup (dev, prod or test)
-    cfg_parser.read(cfg_path)
+    cfg = cfg_parser.read(cfg_path)
 
     # Logger configuration
     log_path = root / 'logs'
@@ -34,8 +32,10 @@ def main():
     # initialize logger
     logger = logging.getLogger(__name__)
 
-    # debug logger
-    logger.debug("Logging")
+    # create app instance for dev, test or prod
+    app = create_app(cfg)
+
+    logger.info("Running app: " + (os.environ.get('APP_NAME') or "Anonymous App"))
     return True
 
 

@@ -2,7 +2,9 @@
 
 import unittest
 import os
-from .. import main
+import main
+from app import create_app
+
 
 class BasicTestCase(unittest.TestCase):
     def setUp(self):
@@ -11,9 +13,11 @@ class BasicTestCase(unittest.TestCase):
     def tearDown(self):
         os.environ.pop('APP_ENV')
 
-    def test_evo_is_working(self):
+    def test_main_is_running(self):
         self.assertTrue(main.main())
 
+    def test_app_is_not_none(self):
+        self.assertTrue(create_app("") is not None)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_logger_is_present(self):
+        self.assertLogs()
