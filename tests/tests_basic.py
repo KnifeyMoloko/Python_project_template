@@ -1,5 +1,3 @@
-# basic tests for Evo
-
 import unittest
 import os
 import main
