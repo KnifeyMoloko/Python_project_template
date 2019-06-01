@@ -42,20 +42,20 @@ are included
 ## App architecture
                   
                   
-                                         | INTERNAL APP MODULES AND RESOURCES |
-                                         |    (helpers, static files,db migrations etc.)      |
-                                                                              ^
-                                                                              ^
-                                                                              ^
-                                            | LOGGER | <<<| APP |<<<| CONFIG |
-                                                        |                     |                   |
-                                                        |                     |                   |    
-                                                        |                     |                   |
-                                                        ---------------------------
-                                                                              |
-                                                                              |
-                                                                              |
-                                                                        | MAIN | <---------- | TESTS | 
+                         |    INTERNAL APP MODULES AND RESOURCES    |
+                         |(helpers, static files,db migrations etc.)|
+                                            ^
+                                            ^
+                                            ^
+                           | LOGGER | <<<| APP |<<<| CONFIG |
+                                |           |           |
+                                |           |           |    
+                                |           |           |
+                                -------------------------
+                                            |
+                                            |
+                                            |
+                                         | MAIN | <---------- | TESTS | 
                                                                           
                                                       
                                                                         
