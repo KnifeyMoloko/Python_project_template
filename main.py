@@ -12,7 +12,7 @@ def main():
     # general app configuration
 
     # set root directory for the app (this directory, that is)
-    root = Path('.') / os.getcwd()
+    root = Path.cwd()
 
     # setup configuration file path using the APP_ENV environment variable
     cfg_path = root / 'config' / '{}.ini'.format(os.environ.get('APP_ENV'))
