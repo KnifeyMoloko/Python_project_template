@@ -98,16 +98,17 @@ Clone or download the zipped files to your directory of choice.
 ### 2. Checking the installation
 
 The template should be ready to go as soon as you clone/download it, but I'd recommend running the template scripts
-referenced in the *Running the template scripts* section above. The output for **run_tests.py** should be as follows:
-    
-    2019-05-23 00:28:35,034 : main : main : 38 : INFO : Running app: Anonymous App
+referenced in the *Running the template scripts* section above. The output for **run_tests.py** should be similar to:
+
+    /usr/bin/python3.6 /home/newton/Programming/Python/Python_project_template/run_tests.py
     test_app_is_not_none (tests_basic.BasicTestCase) ... ok
+    test_config_is_not_empty (tests_basic.BasicTestCase) ... ok
     test_logger_is_present (tests_basic.BasicTestCase) ... ok
     test_main_is_running (tests_basic.BasicTestCase) ... ok
-    
+
     ----------------------------------------------------------------------
-    Ran 3 tests in 0.005s
-    
+    Ran 4 tests in 0.007s
+
     OK
     
 Running **main.py** should give you:
